@@ -6,7 +6,6 @@ let currId = 0;
 function App() {
   const [list, setList] = useState<any[]>([])
   const [task, setTask] = useState('')
-  const [last, setLast] = useState('')
   return (
     <div className="App">
        <h1>Todos</h1>
@@ -20,10 +19,9 @@ function App() {
           }else {
           list.push({
             "id": currId++,
-            "firstName": task,
+            "taskName": task,
           })
           setTask("")
-          setLast("")
           console.log(list);
         }}}>Add</button>
       </div>
@@ -32,7 +30,7 @@ function App() {
           return (
             <div key={item.id} className='listContainer' >
               <div>
-              <p>{item.firstName} </p>
+              <p>{item.taskName} </p>
               </div>
               <div>
                 <p>
